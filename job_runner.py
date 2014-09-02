@@ -91,9 +91,9 @@ class Reducer():
 		return results
 	
 	def run(self, data):
-    """
-       Returns list of results from each reducer [[Reducer 1], [Reducer 2], ...]
-    """
+		"""
+			Returns list of results from each reducer [[Reducer 1], [Reducer 2], ...]
+		"""
 		pool = Pool(processes=self.job.reducer_count,)
 		print("Running reduce on ", len(data), " records")
 		chunk_size = int(len(data) / self.job.reducer_count)
