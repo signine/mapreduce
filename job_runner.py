@@ -18,8 +18,6 @@ class JobRunner():
 			key_provider = lambda x: job.sort_key_provider(x[0])
 		return sorted(data, key=key_provider)
 	
-		
-	
 
 class Mapper():
 	"""
@@ -72,6 +70,7 @@ class Mapper():
 		self.results = list(results.items())
 		return self.results
 
+
 class Reducer():
 
 	def __init__(self, job):
@@ -92,6 +91,9 @@ class Reducer():
 		return results
 	
 	def run(self, data):
+    """
+       Returns list of results from each reducer [[Reducer 1], [Reducer 2], ...]
+    """
 		pool = Pool(processes=self.job.reducer_count,)
 		print("Running reduce on ", len(data), " records")
 		chunk_size = int(len(data) / self.job.reducer_count)

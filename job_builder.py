@@ -42,5 +42,3 @@ class JobBuilder():
 	
 	def build(self):
 		return Job(**self.args)
-		
-	

@@ -15,7 +15,3 @@ class Job():
 		for opt in self.__REQUIRED_OPTS:
 			if opt not in keys or not opts[opt]:
 				raise Exception("Missing required argument: " + opt)
-	
-			
-				
-		
